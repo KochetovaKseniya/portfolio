@@ -1,0 +1,25 @@
+$black: #1F1F1F;
+$milk: #F5F5F5;
+
+
+$grey: #BEBEBE;
+$lightGrey: #EBEBEB;
+$darkGrey: #393939;
+$milkGrey: #F5F5F5;
+
+$pc: 1200px;
+
+%cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+%contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+

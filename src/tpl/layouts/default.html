@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+    <div id="preloader" class="visible"></div>
+    <div class="body-wrapper">
+
+        <div id="cursor">
+            <svg class="play"><use xlink:href="assets/img/sprite.svg#play"></use></svg>
+            <svg class="pause"><use xlink:href="assets/img/sprite.svg#pause"></use></svg>
+            <svg class="slider"><use xlink:href="assets/img/sprite.svg#slider-arrow"></use></svg>
+            <span class="form-msg">Будь ласка, заповнiть необхiднi поля.</span>
+            <span class="case-btn">Дивитися</span>
+        </div>
+        
+        <div class="content" data-scroll-container>
+            {{> header}}
+
+            {{> body}}
+
+            {{> footer}}
+        </div>
+
+    </div>
+    {{> modal}}
+
+    {{> scripts}}
+</body>
+
+</html>
