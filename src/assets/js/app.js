@@ -106,25 +106,8 @@ $(document).ready(function () {
 
 });
 
-//marquee
-// $('#marquee_1').marquee({
-//     duration: 50000,
-//     startVisible: true,
-//     duplicated: true,
-//     gap: 0,
-//     direction: 'right'
-// });
-
-// $('#marquee_2').marquee({
-//     duration: 50000,
-//     startVisible: true,
-//     duplicated: true,
-//     gap: 0
-// });
-//marquee
-
 // scroll-down
-$('.main__link.first a').on('click', function () {
+$('.first a.main__link').on('click', function () {
     let elem = $(this).attr('href'),
     target = $(elem).offset().top;
     $('html, body').animate({ scrollTop: target }, 1500);

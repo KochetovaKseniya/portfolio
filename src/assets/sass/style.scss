@@ -623,7 +623,7 @@ body {
 .main {
     height: 100vh;
     background: $black;
-    color: #fff;
+    color: $white;
     position: relative;
     overflow: hidden;
     &__inner {
@@ -660,11 +660,47 @@ body {
         &::before {
             width: 88px;
         }
+        @media screen and (max-width: $pc) {
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
         &.first {
             position: absolute;
             bottom: 80px;
         }
-        @media screen and (max-width: $pc) {
+        &--git {
+            display: block;
+            width: 42px;
+            height: 40px;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            animation: fade-up 1s .6s ease-in-out;
+            animation-fill-mode: forwards;
+            svg, img, picture {
+                @extend %contain;
+                fill: $white;
+            }
+            @media screen and (max-width: $pc) {
+                display: none;
+            }
+        }
+    }
+    &__circle {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 382px;
+        svg {
+            display: block;
+            fill: #fff;
+            @extend %contain;
         }
     }
 }
@@ -673,6 +709,106 @@ body {
     background-color: $milk;
     color: #000
 }
+
+.works {
+    padding: 104px 0;
+    &__menu {
+        margin-left: -15px;
+        color: #BEBEBE;
+        display: flex;
+        align-items: center;
+    }
+    &__list {
+        padding-top: 85px;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 590px;
+        &:nth-of-type(2n) {
+            margin-top: 220px;
+        }
+        &:nth-of-type(2n+1) {
+            margin-top: -160px;
+        }
+        &:nth-of-type(1) {
+            margin-top: unset;
+        }
+        &:nth-of-type(2) {
+            margin-top: 382px;
+        }
+        &--cover {
+            display: block;
+            height: 382px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            img, svg, picture {
+                @extend %cover;
+            }
+        }
+        &--title {
+            margin-top: 47px;
+            font-size: 48px;
+            line-height: 1;
+            font-family: 'Styrene A LC 500';
+        }
+        &--subtitle {
+            margin-top: 17px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
+
+.footer {
+    padding-bottom: 144px;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__link {
+        display: block;
+        font-size: 24px;
+        line-height: 32px;
+        color: $black;
+        flex-shrink: 0;
+        width: 52.3px;
+        height: 50.8px;
+        font-size: 400;
+        svg, img, picture {
+            @extend %contain;
+        }
+        &:first-of-type {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        &:last-of-type {
+            margin-left: 36px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
