@@ -31,31 +31,33 @@ title: Главная
             </a>
         </div>
     </div>
-    <div class="main__circle target">
-        <svg>
-            <use xlink:href="assets/img/sprite.svg#circle"></use>
-        </svg>
+    <div class="main__circle">
+        <div class="main__circle--elem">
+            <svg>
+                <use xlink:href="assets/img/sprite.svg#circle"></use>
+            </svg>
+        </div>
     </div>
 </section>
 
 
-<section class="works" data-scroll-section>
+<section class="works" id="portfolio" data-scroll-section>
     <div class="container">
         <nav class="menu">
             <ul class="works__menu">
-                <li class="menu__item">
+                <li class="menu__item active" data-work="all">
                     <a class="text hover__text" href="#">Все работы</a>
                     <span></span>
                 </li>
-                <li class="menu__item">
+                <li class="menu__item" data-work="land">
                     <a class="text hover__text" href="#">Landing page</a>
                     <span></span>
                 </li>
-                <li class="menu__item">
+                <li class="menu__item" data-work="quiz">
                     <a class="text hover__text" href="#">Квиз</a>
                     <span></span>
                 </li>
-                <li class="menu__item">
+                <li class="menu__item" data-work="animation">
                     <a class="text hover__text" href="#">Анимации</a>
                     <span></span>
                 </li>
@@ -63,8 +65,7 @@ title: Главная
             <span class="menu__hover"></span>
         </nav>
 
-
-        <div class="works__list">
+        <div class="works__list active" data-items="all">
             <a href="/case.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/mayfair.jpg" alt="">
@@ -101,5 +102,49 @@ title: Главная
                 <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
             </a>
         </div>
+        <div class="works__list" data-items="land">
+            <a href="/case.html" class="works__item">
+                <div class="works__item--cover">
+                    <img src="./assets/img/vividly.jpg" alt="">
+                </div>
+                <div class="works__item--title">Vividly</div>
+                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+            </a>
+            <!-- more landindg -->
+        </div>
+        <div class="works__list" data-items="quiz">
+            <a href="/case.html" class="works__item">
+                <div class="works__item--cover">
+                    <img src="./assets/img/schoolfood.jpg" alt="">
+                </div>
+                <div class="works__item--title">SchoolFood</div>
+                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+            </a>
+        </div>
+        <div class="works__list" data-items="animation">
+            <a href="/case.html" class="works__item">
+                <div class="works__item--cover">
+                    <img src="./assets/img/mayfair.jpg" alt="">
+                </div>
+                <div class="works__item--title">Mayfair marks</div>
+                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+            </a>
+            <a href="/case.html" class="works__item">
+                <div class="works__item--cover">
+                    <img src="./assets/img/schoolfood.jpg" alt="">
+                </div>
+                <div class="works__item--title">SchoolFood</div>
+                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+            </a>
+            <a href="/case.html" class="works__item">
+                <div class="works__item--cover">
+                    <img src="./assets/img/vividly.jpg" alt="">
+                </div>
+                <div class="works__item--title">Vividly</div>
+                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+            </a>
+        </div>
+        
+
     </div>
 </section>

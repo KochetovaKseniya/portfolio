@@ -47,6 +47,23 @@ $(document).ready(function () {
         }
     });
 
+    // portfolio tabs 
+    $('.menu__item').on('click', function() {
+        $('.menu__item').removeClass('active');
+        if($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
+        let items = $(this).attr('data-work');
+        let elem = $('.works').find('[data-items = "' + items + '"]'); 
+        console.log(items);
+        $('.works__list').fadeOut();
+        elem.fadeIn();
+        elem.addClass('active');
+    });
+    // portfolio tabs 
+
     // menu cursor
     $('.menu__item').on('mousemove', function () {
         let parent = $(this).parent().parent('.menu');
@@ -63,13 +80,10 @@ $(document).ready(function () {
         $('.menu__hover').removeClass('init');
     });
     $(document).on('mouseleave', '.menu__item', function (e) {
-        $(this).removeClass('active');
         $('.menu__hover').removeClass('init');
     });
-
     // menu + portfolio menu
     $(document).on('mousemove', '.menu__item', function (e) {
-        $(this).addClass('active');
         let pos = $(this).offset();
         let elem_left = pos.left;
         let elem_top = pos.top;
@@ -78,7 +92,6 @@ $(document).ready(function () {
         let Yinner = e.pageY - elem_top;
         $(this).find('span').css({ 'left': Xinner, 'top': Yinner });
     });
-
     // menu cursor
     
     $('input[type="tel"]').on('focus', function () {

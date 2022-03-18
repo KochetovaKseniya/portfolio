@@ -72,14 +72,73 @@ if (screen.width  > 1064) {
       $('#cursor').removeClass('white');
   });
   
-  $('#chat, .main__circle, .main__link, .main__bottom--git, .menu').on('mouseenter', () => {
+  $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
       $('#cursor').addClass('hide');
       $('#cursor').addClass('white');
   });
-  $('#chat, .main__circle, .main__link, .main__bottom--git, .menu').on('mouseleave', () => {
+  $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
       $('#cursor').removeClass('hide');
   });
 
+  $('.works__item--cover').on('mouseenter', () => {
+    $('#cursor').addClass('hover-work');
+  });
+  $('.works__item--cover, .works__menu, .footer__link').on('mouseleave', () => {
+    $('#cursor').removeClass('hide');
+    $('#cursor').removeClass('white');
+    $('#cursor').removeClass('hover-work');
+  });
+
+  //animation main-section
+  const circle = document.querySelector(".main__circle");
+  const elem = document.querySelector(".main__circle--elem");
+  class mainCursor {
+    constructor(el, circle, elem) {
+      this.el = el;
+      this.bind();
+    }
+
+    bind() {
+      document.addEventListener("mousemove", this.move.bind(this), false);
+    }
+
+    move(e) {
+      const cursorPosition = {
+        left: e.clientX,
+        top: e.clientY
+      };
+      document.querySelectorAll(".main__circle").forEach((single) => {
+        let triggerDistance = single.getBoundingClientRect().width*2;
+
+        const targetPosition = {
+          left:
+            single.getBoundingClientRect().left +
+            single.getBoundingClientRect().width / 2,
+          top:
+            single.getBoundingClientRect().top +
+            single.getBoundingClientRect().height / 2
+        };
+        const distance = {
+          x: targetPosition.left - cursorPosition.left,
+          y: targetPosition.top - cursorPosition.top
+        };
+
+        const angle = Math.atan2(distance.x, distance.y);
+        const hypotenuse = Math.sqrt(
+          distance.x * distance.x + distance.y * distance.y
+        );
+        if (hypotenuse < triggerDistance) {
+          TweenMax.to(single.querySelector(".main__circle--elem"), 0.9, {
+            x: -((Math.sin(angle) * hypotenuse) / 10),
+            y: -((Math.cos(angle) * hypotenuse) / 10)
+          });
+
+        } else {
+        }
+      });
+    }
+  }
+  const maincursor = new mainCursor(elem, circle);
 
 
 
