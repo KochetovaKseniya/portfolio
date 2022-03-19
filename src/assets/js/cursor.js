@@ -75,18 +75,18 @@ if (screen.width  > 1064) {
   $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
       $('#cursor').addClass('hide');
       $('#cursor').addClass('white');
-  });
-  $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
+    });
+    $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
       $('#cursor').removeClass('hide');
-  });
-
-  $('.works__item--cover').on('mouseenter', () => {
-    $('#cursor').addClass('hover-work');
-  });
-  $('.works__item--cover, .works__menu, .footer__link').on('mouseleave', () => {
+      $('#cursor').addClass('white');
+    });
+    
+    $('.works__item').on('mouseenter', () => {
+      $('#cursor').addClass('white');
+    });
+  $('.works__item, .works__menu, .footer__link').on('mouseleave', () => {
     $('#cursor').removeClass('hide');
     $('#cursor').removeClass('white');
-    $('#cursor').removeClass('hover-work');
   });
 
   //animation main-section
@@ -139,7 +139,6 @@ if (screen.width  > 1064) {
     }
   }
   const maincursor = new mainCursor(elem, circle);
-
 
 
 }
