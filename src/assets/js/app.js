@@ -48,8 +48,8 @@ $(document).ready(function () {
     });
 
     // portfolio tabs 
-    $('.menu__item').on('click', function() {
-        $('.menu__item').removeClass('active');
+    $('.works__menu .menu__item').on('click', function() {
+        $('.works__menu .menu__item').removeClass('active');
         if($(this).hasClass('active')) {
             $(this).removeClass('active');
         } else {

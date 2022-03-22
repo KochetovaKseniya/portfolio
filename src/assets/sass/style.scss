@@ -249,6 +249,9 @@ body {
         &--main {
             fill: #fff;
         }
+        &--black {
+            fill: #000;
+        }
         &--bg {
             stroke: transparent;
         }
@@ -269,7 +272,7 @@ body {
         }
     }
     &.active {
-        background: $black !important;
+        background: transparent !important;
         transition: all .4s;
         span {
             transform: scale(50);
@@ -377,17 +380,19 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        background: #fff;
+        background: rgba(31, 31, 31, .05);
         border-radius: 50px;
         transition: all .6s cubic-bezier(0, 0.4, 0, 1);
     }
     &:hover {
         // span {
-        //     color: #fff;
-        // }
-        &::before {
-            width: 100%;
-            background: $lightGrey;
+            //     color: #fff;
+            // }
+            &::before {
+                width: 100%;
+                background: $lightGrey;
+                // background: rgba(31, 31, 31, 0.1);
+                // background: #fff;
         }
     }
     &--dark {
@@ -477,24 +482,6 @@ body {
             transform: scale(18.8);
         }
     }
-    // .works__cursor {
-    //     display: none;
-    //     overflow: hidden;
-    //     width: fit-content;
-    //     &::before {
-    //         content: '';
-    //         width: 20px;
-    //         height: 20px;
-    //         display: block;
-    //         position: absolute;
-    //         left: -10px;
-    //         top: -10px;
-    //         border-radius: 50%;
-    //         background: #fff;
-    //         transform: scale(10);
-    //         // transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .1s, background .1s;
-    //     }
-    // }
     &.hover-work {
         &::before {
             opacity: 0;
@@ -679,7 +666,13 @@ body {
 
 .case {
     background-color: $milk;
-    color: #000
+    color: #000;
+    &__bottom {
+        margin-top: 47px;
+    }
+    &__circle svg {
+        fill: $black;
+    }
 }
 
 .works {
