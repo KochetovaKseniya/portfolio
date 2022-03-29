@@ -168,6 +168,10 @@ body {
         animation: fade-up 1s .2s ease-in-out;
         animation-fill-mode: forwards;
     }
+    .main__circle--elem {
+        animation: fade-up 1s .2s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 }
 
 .container {
@@ -647,6 +651,7 @@ body {
             display: block;
             height: 382px;
             width: 376px;
+            opacity: 0;
         }
         svg {
             flex-shrink: 0;
