@@ -9,6 +9,18 @@ $(document).ready(function () {
         smooth: true
     });
 
+    const caseSlider = new Swiper('.swiper', {
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        navigation: {
+            nextEl: '.slider__next',
+            prevEl: '.slider__prev',
+        },
+    });
+
     $(document).on('mousemove', '#chat', function (e) {
         $(this).addClass('active');
         let pos = $(this).offset();
@@ -21,30 +33,6 @@ $(document).ready(function () {
     });
     $(document).on('mouseleave', '#chat', function (e) {
         $(this).removeClass('active');
-    });
-
-    // $('.video__button').on('click', function (e) {
-    //     e.preventDefault();
-    //     $(this).prev('video')[0].play();
-    //     $(this).hide();
-    // });
-
-    // $('.video video').on('click', function (e) {
-    //     if ($(this).hasClass('playing')) {
-    //         this.pause();
-    //         $(this).removeClass('playing');
-    //         $('#cursor').removeClass('paused');
-    //     } else {
-    //         this.play();
-    //         $(this).addClass('playing');
-    //         $('#cursor').addClass('paused');
-    //     }
-    // });
-
-    $('#thanks').mouseup(function (e) { 
-        if (!$(".modal__block").is(e.target) && $(".modal__block").has(e.target).length === 0) { 
-            $('.modal').fadeOut();
-        }
     });
 
     // portfolio tabs 
@@ -93,30 +81,6 @@ $(document).ready(function () {
         $(this).find('span').css({ 'left': Xinner, 'top': Yinner });
     });
     // menu cursor
-    
-    $('input[type="tel"]').on('focus', function () {
-        $(this).parent().addClass('focus');
-        let val = $(this).val();
-        if (val == '') {
-            $(this).val('+');
-        }
-    });
-    $('input[type="tel"]').on('blur', function () {
-        $(this).parent().removeClass('focus');
-        let val = $(this).val();
-        if (val == '' || val == '+') {
-            $(this).val('');
-        }
-    });
-    $('.callback input').on('change keyup', function () {
-        console.log($(this).val());
-        if ($(this).val() !== '' && $(this).val() !== '+') {
-            $('.callback__submit').removeClass('disabled');
-        } else {
-            $('.callback__submit').addClass('disabled');
-        }
-    });
-
 });
 
 // scroll-down

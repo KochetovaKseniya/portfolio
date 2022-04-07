@@ -172,6 +172,10 @@ body {
         animation: fade-up 1s .2s ease-in-out;
         animation-fill-mode: forwards;
     }
+    .mockup__inner {
+        animation: fade-up 1s .5s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 }
 
 .container {
@@ -287,12 +291,9 @@ body {
     }
 }
 
-
-
 .menu {
     display: block;
     font-weight: 400;
-    color: #fff;
     position: relative;
     &__list {
         display: flex;
@@ -465,7 +466,66 @@ body {
         background: $black;
         transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .1s, background .1s;
     }
-
+    &.slide-next {
+        .next {
+            display: block;
+            z-index: 20;
+            position: absolute;
+            left: -5px;
+            top: -13px;
+            svg {
+                width: 15px;
+                height: 30px;
+            }
+        }
+        &::before {
+            transform: scale(3);
+            z-index: 10;
+        }
+    }
+    &.slide-prev {
+        .prev {
+            display: block;
+            z-index: 20;
+            position: absolute;
+            left: -8px;
+            top: -13px;
+            svg {
+                width: 15px;
+                height: 30px;
+            }
+        }
+        &::before {
+            transform: scale(3);
+            z-index: 10;
+        }
+    }
+    .prev {
+        display: none;
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+    .next {
+        display: none;
+    }
+    .play {
+        display: none;
+    }
+    &.video {
+        .play {
+            display: block;
+            position: absolute;
+            left: -30px;
+            top: -40px;
+        }
+        &::before {
+            transform: scale(0);
+        }
+    }
+    .phone, .teleg {
+        display: none;
+    }
     &.white::before {
         background: #fff;
     }
@@ -528,8 +588,22 @@ body {
     right: 0;
     top: 0;
     z-index: 10;
+    color: #fff;
     @media screen and (max-width: $pc) {
         padding: 63px 0 0;
+    }
+    &.dark {
+        color: $black;
+        .menu__item {
+            a {
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+        .menu__hover {
+            background-color: $black;
+        }
     }
     &__inner {
         display: flex;
@@ -672,11 +746,135 @@ body {
 .case {
     background-color: $milk;
     color: #000;
+    max-height: 700px;
     &__bottom {
         margin-top: 47px;
     }
     &__circle svg {
         fill: $black;
+    }
+    &__title {
+        max-width: 790px;
+    }
+}
+
+.mockup {
+    padding-bottom: 122px;
+    &__inner {
+        opacity: 0;
+    }
+    &__preview {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img, svg, video {
+            @extend %contain;
+        }
+        &--bg {
+            display: block;
+            width: 980px;
+            height: 680px;
+        }
+        &--img {
+            width: 820px;
+            height: 500px;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            img, video, svg {
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
+    }
+    &__text {
+        margin-top: 120px;
+        span {
+            font-family: 'Styrene A LC 500';
+        }
+    }
+}
+
+.slider {
+    .swiper {
+        position: relative;
+    }
+    &__item {
+        height: 660px;
+        img, svg, picture, video {
+            @extend %cover;
+        }
+        &.center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img, svg, picture, video {
+                width: 975px;
+                height: 581px;
+                border-radius: 10px;
+            }
+        }
+    }
+    &__prev,
+    &__next {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 300px;
+        height: 100%;
+        z-index: 90;
+    }
+    &__next {
+        left: unset;
+        right: 0;
+    }
+}
+
+.following {
+    padding-top: 300px;
+    padding-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &__btn {
+        display: flex;
+        align-items: center;
+        position: relative;
+        &:hover {
+            .following__elem {
+                right: 0;
+            }
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        font-family: 'Styrene A LC 500', sans-serif;
+        font-size: 38px;
+        line-height: 1;
+        position: relative;
+        z-index: 5;
+        margin-right: 50px;        
+        svg {
+            margin-left: 15px;
+            width: 46px;
+        }
+    }
+    &__elem {
+        display: block;
+        background-color: #fff;
+        width: 375px;
+        height: 375px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        right: -50%;
+        transition: all 0.8s ease-in-out;
     }
 }
 
@@ -786,7 +984,6 @@ body {
     }
 }
 
-
 .footer {
     padding-bottom: 144px;
     @media screen and (max-width: $pc) {
@@ -831,133 +1028,5 @@ body {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// modal 
-.modal {
-    // display: block;
-    display: none;
-    width: 100%;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 11;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(30px);
-    overflow-y: scroll;
-    scrollbar-width: none;
-    padding: 200px 0;
-    @media screen and (min-width: $pc) {
-        padding: 150px 0;
-    }
-    &::-webkit-scrollbar {
-        display: none !important;
-    }
-    &__block {
-        margin: 0 auto;
-        max-width: 320px;
-        padding: 54px 16px;
-        position: relative;
-        background: #f5f5f5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        @media screen and (min-width: $pc) {
-            width: 100%;
-            max-width: 1440px;
-            padding: 104px 0;
-        }
-    }
-    &__title {
-        font-family: 'Styrene A LC', sans-serif;
-        color: #1F1F1F;
-        text-align: center;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 20px;
-        @media screen and (min-width: $pc) {
-            font-size: 60px;
-            line-height: 60px;
-            margin-bottom: 68px;
-        }
-    }
-    &__text {
-        font-family: 'Styrene A LC', sans-serif;
-        color: #1F1F1F;
-        text-align: center;
-        font-weight: 400;
-        @media screen and (min-width: $pc) {
-            font-size: 40px;
-            line-height: 40px;
-        }
-    }
-    &__content {
-        margin-top: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        @media screen and (min-width: $pc) {
-            margin-top: 72px;
-        }
-        &--links {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30px;
-            p {
-                font-size: 16px;
-                line-height: 20px;
-                color: #BEBEBE;
-            }
-            a {
-                transition: all 0.3s ease-in-out;
-                margin-left: 10px;
-            }
-            @media screen and (min-width: $pc) {
-                position: absolute;
-                right: 88px;
-                bottom: 122px;
-                // flex-direction: column;
-                margin-top: unset;
-                a {
-                    margin-left: 36px;
-                }
-                p {
-                    font-size: 18px;
-                    line-height: 24px;
-                }
-            }
-        }
-        @media screen and (min-width: $pc) {
-            flex-direction: row;
-        }
-    }
-}
-.wpcf7-response-output {
-    display: none;
-}
-.wpcf7-spinner {
-    display: none;
-}
-
-
-
 
 @import 'keyframes';

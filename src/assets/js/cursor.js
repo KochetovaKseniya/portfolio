@@ -66,29 +66,51 @@ if (screen.width  > 1064) {
   const cursor = new Cursor(element, target);
 
   $('.cursorWhite').on('mouseenter', () => {
-      $('#cursor').addClass('white');
+    $('#cursor').addClass('white');
   });
   $('.cursorWhite').on('mouseleave', () => {
-      $('#cursor').removeClass('white');
+    $('#cursor').removeClass('white');
   });
   
-  $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
-      $('#cursor').addClass('hide');
-      $('#cursor').addClass('white');
-    });
-    $('#chat, .main__circle--elem, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
-      $('#cursor').removeClass('hide');
-      $('#cursor').addClass('white');
-    });
-    
-    $('.works__item').on('mouseenter', () => {
-      $('#cursor').addClass('white');
-    });
+  $('#chat, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
+    $('#cursor').addClass('hide');
+    $('#cursor').addClass('white');
+  });
+  $('#chat, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
+    $('#cursor').removeClass('hide');
+    $('#cursor').addClass('white');
+  });
+  
+  $('.works__item').on('mouseenter', () => {
+    $('#cursor').addClass('white');
+  });
   $('.works__item, .works__menu, .footer__link').on('mouseleave', () => {
     $('#cursor').removeClass('hide');
     $('#cursor').removeClass('white');
   });
 
+  // video
+  $('.mockup__preview--img video').on('mouseenter', () => {
+    $('#cursor').addClass('video');
+  });
+  $('.mockup__preview--img video').on('mouseleave', () => {
+    $('#cursor').removeClass('video');
+  });
+  $('.mockup__preview--img video').on('click', () => {
+    $('#cursor').removeClass('video');
+  });
+
+  // slider
+  $('.slider__prev').on('mouseenter', () => {
+    $('#cursor').addClass('slide-prev');
+  });
+  $('.slider__next').on('mouseenter', () => {
+    $('#cursor').addClass('slide-next');
+  });
+  $('.slider__next, .slider__prev').on('mouseleave', () => {
+    $('#cursor').removeClass('slide-prev');
+    $('#cursor').removeClass('slide-next');
+  });
   //animation main-section
   const circle = document.querySelector(".main__circle");
   const elem = document.querySelector(".main__circle--elem");
