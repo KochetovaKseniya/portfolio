@@ -111,6 +111,7 @@ if (screen.width  > 1064) {
     $('#cursor').removeClass('slide-prev');
     $('#cursor').removeClass('slide-next');
   });
+  
   //animation main-section
   const circle = document.querySelector(".main__circle");
   const elem = document.querySelector(".main__circle--elem");
@@ -161,6 +162,5 @@ if (screen.width  > 1064) {
     }
   }
   const maincursor = new mainCursor(elem, circle);
-
 
 }

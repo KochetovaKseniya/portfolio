@@ -110,8 +110,18 @@ body {
     line-height: 25px;
     color: $black;
     background: $milkGrey;
+    scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: inherit;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #1F1F1F;
+    border-radius: 9em;
+}
 #preloader {
     position: fixed;
     left: 0;
@@ -139,6 +149,22 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    &.night {
+        .main {
+            background: inherit !important;
+            color: #000;
+        }
+        .main__title a svg path {
+            fill: #000 !important;
+        }
+        .main__circle--elem svg {
+            fill: #000 !important;
+        }
+        .main__bottom--git svg {
+            fill: #000 !important;
+        }
+    }
 }
 
 .content {
@@ -165,10 +191,6 @@ body {
         animation-fill-mode: forwards;
     }
     .main__title {
-        animation: fade-up 1s .2s ease-in-out;
-        animation-fill-mode: forwards;
-    }
-    .main__circle--elem {
         animation: fade-up 1s .2s ease-in-out;
         animation-fill-mode: forwards;
     }
@@ -604,6 +626,11 @@ body {
         .menu__hover {
             background-color: $black;
         }
+        .mode:hover {
+            svg path {
+                fill: #000;
+            }
+        }
     }
     &__inner {
         display: flex;
@@ -686,6 +713,12 @@ body {
             position: absolute;
             bottom: 80px;
         }
+        .button {
+            cursor: pointer;
+            span {
+                cursor: pointer;
+            }
+        }
         &--git {
             display: block;
             width: 42px;
@@ -725,7 +758,6 @@ body {
             display: block;
             height: 382px;
             width: 376px;
-            opacity: 0;
         }
         svg {
             flex-shrink: 0;
