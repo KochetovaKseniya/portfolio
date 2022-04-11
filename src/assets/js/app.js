@@ -91,7 +91,7 @@ $(document).ready(function () {
     });
     
     // scroll-down
-    $('.main__link').on('click', function () {
+    $('.first .main__link').on('click', function () {
         target = $('.main').height();
         $('html, body').animate({ scrollTop: target }, 1000);
     });

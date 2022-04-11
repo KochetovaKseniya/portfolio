@@ -198,6 +198,10 @@ body {
         animation: fade-up 1s .5s ease-in-out;
         animation-fill-mode: forwards;
     }
+    .home.init {
+        animation: fade-down 1s .2s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 }
 
 .container {
@@ -218,17 +222,16 @@ body {
         font-size: 35px;
     }
 }
-.github {
+.home {
     display: block;
     width: 42px;
-    height: 40.3px;
+    height: 30.3px;
     opacity: 0;
     &.init {
-        opacity: 1
+        opacity: 0;
     }
     svg, img, picture {
         @extend %contain;
-        fill: #E5E5E5;
     }
     @media screen and (max-width: $pc) {
         display: none;
@@ -949,6 +952,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
         width: 590px;
         @media screen and (max-width: $pc) {
             width: 100%;
@@ -977,15 +981,18 @@ body {
             }
         }
         &:hover {
+            .works__item--hover {
+                opacity: 1;
+            }
             .works__item--cover {
-                img, svg, picture {
-                    transform: scale(1.09);
+                &:after {
+                    opacity: 1;
                 }
             }
         }
         &--cover {
             display: block;
-            height: 382px;
+            height: 362px;
             width: 100%;
             border-radius: 10px;
             position: relative;
@@ -994,9 +1001,32 @@ body {
                 @extend %cover;
                 transition: all 0.4s ease-in-out;
             }
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all 0.4s ease-in-out;
+                opacity: 0;
+            }
             @media screen and (max-width: $pc) {
                 height: 220px;
             }
+        }
+        &--hover {
+            display: block;
+            position: absolute;
+            color: #fff;
+            top: 170px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
         }
         &--title {
             margin-top: 47px;

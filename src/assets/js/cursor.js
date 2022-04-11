@@ -72,11 +72,11 @@ if (screen.width  > 1064) {
     $('#cursor').removeClass('white');
   });
   
-  $('#chat, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
+  $('#chat, .first .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseenter', () => {
     $('#cursor').addClass('hide');
     $('#cursor').addClass('white');
   });
-  $('#chat, .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
+  $('#chat, .first .main__link, .main__bottom--git, .menu, .footer__link, .main__bottom--git').on('mouseleave', () => {
     $('#cursor').removeClass('hide');
     $('#cursor').addClass('white');
   });
@@ -87,6 +87,12 @@ if (screen.width  > 1064) {
   $('.works__item, .works__menu, .footer__link').on('mouseleave', () => {
     $('#cursor').removeClass('hide');
     $('#cursor').removeClass('white');
+  });
+  $('.main__link').on('mouseenter', () => {
+    $('#cursor').addClass('hide');
+  });
+  $('.main__link').on('mouseleave', () => {
+    $('#cursor').removeClass('hide');
   });
 
   // video
