@@ -4,7 +4,43 @@ title: Kochetova
 ---
 
 
-<section class="main cursorWhite" data-scroll-section>
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            
+            <a class="home" href="/" target="_blank">
+                <svg>
+                    <use xlink:href="assets/img/sprite.svg#home"></use>
+                </svg>                                
+            </a>
+            <nav class="menu header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a class="text hover__text" href="#portfolio">Works</a>
+                        <span></span>
+                    </li>
+                    <li class="menu__item">
+                        <a class="text hover__text" href="#contacts">Contacts</a>
+                        <span></span>
+                    </li>
+                    <li class="menu__item">
+                        <a class="text hover__text" href="/en.html">Ru</a>
+                        <span></span>
+                    </li>
+                    <li class="mode">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.9238 13.5762L21 10.5L17.9238 7.42377V3.07623H13.5762L10.5 0L7.42377 3.07623H3.07623V7.42377L0 10.5L3.07623 13.5762V17.9238H7.42377L10.5 21L13.5762 17.9238H17.9238V13.5762ZM10.5 16.0678V4.93217C13.5762 4.93217 16.0678 7.42377 16.0678 10.5C16.0678 13.5762 13.5762 16.0678 10.5 16.0678Z" fill="#E5E5E5"/>
+                        </svg>
+                    </li>
+                </ul>
+                <span class="menu__hover"></span>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+<section class="main cursorWhite">
     <div class="container main__inner">
         <div class="main__title">
             <a href="https://telegram.me/KseniyaWeb" id="chat" target="_blank">
@@ -21,8 +57,8 @@ title: Kochetova
         <p class="main__subtitle" data-scroll data-scroll-speed="1" data-scroll-position="top">Front-end developing, CMS Wordpress, turnkey website </p>
 
         <div class="main__bottom first">
-            <div class="main__link">
-                <a class="button button--dark text" href="#portfolio"><span>Посмотреть</span></a>
+            <div class="main__link scroll-down">
+                <div class="button button--dark text"><span>View</span></div>
             </div>
             <a class="main__bottom--git" href="https://github.com/KochetovaKseniya" target="_blank">
                 <svg>
@@ -40,13 +76,12 @@ title: Kochetova
     </div>
 </section>
 
-
-<section class="works" id="portfolio" data-scroll-section>
+<section class="works" id="portfolio">
     <div class="container">
         <nav class="menu">
             <ul class="works__menu">
                 <li class="menu__item active" data-work="all">
-                    <a class="text hover__text" href="#">Все работы</a>
+                    <a class="text hover__text" href="#">All cases</a>
                     <span></span>
                 </li>
                 <li class="menu__item" data-work="land">
@@ -54,11 +89,11 @@ title: Kochetova
                     <span></span>
                 </li>
                 <li class="menu__item" data-work="quiz">
-                    <a class="text hover__text" href="#">Квиз</a>
+                    <a class="text hover__text" href="#">Quiz</a>
                     <span></span>
                 </li>
                 <li class="menu__item" data-work="animation">
-                    <a class="text hover__text" href="#">Анимации</a>
+                    <a class="text hover__text" href="#">Animation</a>
                     <span></span>
                 </li>
             </ul>
@@ -66,82 +101,92 @@ title: Kochetova
         </nav>
 
         <div class="works__list active" data-items="all">
-            <a href="/case.html" class="works__item">
+            <a href="/mayfair-marks-en.html" class="works__item">
                 <div class="works__item--cover">
-                    <img src="./assets/img/mayfair.jpg" alt="">
+                    <img src="./assets/img/mayfair.png" alt="">
                 </div>
                 <div class="works__item--title">Mayfair marks</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/sibfactory-en.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/merch.jpg" alt="">
                 </div>
                 <div class="works__item--title">Sibfactory</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/schoolfood-en.html" class="works__item">
                 <div class="works__item--cover">
-                    <img src="./assets/img/schoolfood.jpg" alt="">
+                    <img src="./assets/img/schoo.jpg" alt="">
                 </div>
                 <div class="works__item--title">SchoolFood</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/agregator-en.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/agregat.jpg" alt="">
                 </div>
-                <div class="works__item--title">Агрегатор курсов</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--title">Course aggregator</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/vividly-en.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/vividly.jpg" alt="">
                 </div>
                 <div class="works__item--title">Vividly</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
         </div>
         <div class="works__list" data-items="land">
-            <a href="/case.html" class="works__item">
+            <a href="/vividly-en.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/vividly.jpg" alt="">
                 </div>
                 <div class="works__item--title">Vividly</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
             <!-- more landindg -->
         </div>
         <div class="works__list" data-items="quiz">
-            <a href="/case.html" class="works__item">
+            <a href="/schoolfood-en.html" class="works__item">
                 <div class="works__item--cover">
-                    <img src="./assets/img/schoolfood.jpg" alt="">
+                    <img src="./assets/img/school.jpg" alt="">
                 </div>
                 <div class="works__item--title">SchoolFood</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
         </div>
         <div class="works__list" data-items="animation">
-            <a href="/case.html" class="works__item">
+            <a href="/mayfair-marks-en.html" class="works__item">
                 <div class="works__item--cover">
-                    <img src="./assets/img/mayfair.jpg" alt="">
+                    <img src="./assets/img/mayfair.png" alt="">
                 </div>
                 <div class="works__item--title">Mayfair marks</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/schoolfood-en.html" class="works__item">
                 <div class="works__item--cover">
-                    <img src="./assets/img/schoolfood.jpg" alt="">
+                    <img src="./assets/img/school.jpg" alt="">
                 </div>
                 <div class="works__item--title">SchoolFood</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
-            <a href="/case.html" class="works__item">
+            <a href="/vividly-en.html" class="works__item">
                 <div class="works__item--cover">
                     <img src="./assets/img/vividly.jpg" alt="">
                 </div>
                 <div class="works__item--title">Vividly</div>
-                <div class="works__item--subtitle">Верстка сайта <br> Натяжка на Wordpress</div>
+                <div class="works__item--subtitle">Html code <br> CMS Wordpress</div>
+                <p class="works__item--hover">View</p>
             </a>
         </div>
         

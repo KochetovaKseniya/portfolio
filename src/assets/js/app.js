@@ -7,6 +7,10 @@ $(document).ready(function () {
     const caseSlider = new Swiper('.swiper', {
         speed: 1000,
         effect: 'fade',
+        loop: 'true',
+        autoplay: {
+            delay: 3000,
+        },
         fadeEffect: {
             crossFade: true
         },
@@ -91,7 +95,7 @@ $(document).ready(function () {
     });
     
     // scroll-down
-    $('.first .main__link').on('click', function () {
+    $('.scroll-down').on('click', function () {
         target = $('.main').height();
         $('html, body').animate({ scrollTop: target }, 1000);
     });

@@ -224,17 +224,18 @@ body {
 }
 .home {
     display: block;
-    width: 42px;
-    height: 30.3px;
     opacity: 0;
+    width: 22px;
+    height: 30.3px;
     &.init {
         opacity: 0;
     }
     svg, img, picture {
         @extend %contain;
     }
-    @media screen and (max-width: $pc) {
-        display: none;
+    @media screen and (min-width: $pc) {
+        width: 42px;
+        height: 30.3px;
     }
 }
 .mode {
@@ -645,9 +646,6 @@ body {
         .menu {
             opacity: 0;
         }
-        @media screen and (max-width: $pc) {
-            display: block;
-        }
     }
     &__menu {
         @media screen and (max-width: $pc) {
@@ -685,6 +683,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .title {
+            margin-left: unset;
+            @media screen and (min-width: $pc) {
+                &.ml {
+                    margin-left: 20px;
+                }
+            }
+        }
     }
     &__subtitle {
         margin-top: 58px;
@@ -794,7 +800,10 @@ body {
 }
 
 .mockup {
-    padding-bottom: 122px;
+    padding-bottom: 80px;
+    @media screen and (min-width: $pc) {
+        padding-bottom: 122px;
+    }
     &__inner {
         opacity: 0;
     }
@@ -808,27 +817,42 @@ body {
         }
         &--bg {
             display: block;
-            width: 980px;
-            height: 680px;
+            width: 415px;
+            height: 320px;
+            @media screen and (min-width: $pc) {
+                width: 980px;
+                height: 680px;
+            }
         }
         &--img {
-            width: 820px;
-            height: 500px;
+            width: 320px;
+            height: 210px;
             position: absolute;
-            top: 50px;
+            top: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: block;
             img, video, svg {
-                border-radius: 10px;
                 object-fit: cover;
+            }
+            @media screen and (min-width: $pc) {
+                top: 50px;
+                width: 820px;
+                height: 500px;
+                img, video, svg {
+                    border-radius: 10px;
+                }
             }
         }
     }
     &__text {
-        margin-top: 120px;
+        margin-top: 60px;
+        line-height: 26px;
         span {
             font-family: 'Styrene A LC 500';
+        }
+        @media screen and (min-width: $pc) {
+            margin-top: 120px;
         }
     }
 }
@@ -838,20 +862,12 @@ body {
         position: relative;
     }
     &__item {
-        height: 660px;
+        height: 180px;
+        @media screen and (min-width: $pc) {
+            height: 660px;
+        }
         img, svg, picture, video {
             @extend %cover;
-        }
-        &.center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            img, svg, picture, video {
-                width: 975px;
-                height: 581px;
-                border-radius: 10px;
-            }
         }
     }
     &__prev,
@@ -859,10 +875,13 @@ body {
         position: absolute;
         left: 0;
         top: 0;
-        display: block;
         width: 300px;
         height: 100%;
         z-index: 90;
+        display: none;
+        @media screen and (min-width: $pc) {
+            display: block;
+        }
     }
     &__next {
         left: unset;
@@ -871,11 +890,15 @@ body {
 }
 
 .following {
-    padding-top: 300px;
-    padding-bottom: 300px;
+    padding-top: 200px;
+    padding-bottom: 220px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    @media screen and (min-width: $pc) {
+        padding-top: 300px;
+        padding-bottom: 300px;
+    }
     &__btn {
         display: flex;
         align-items: center;
@@ -890,35 +913,47 @@ body {
         display: flex;
         align-items: center;
         font-family: 'Styrene A LC 500', sans-serif;
-        font-size: 38px;
-        line-height: 1;
         position: relative;
         z-index: 5;
-        margin-right: 50px;        
+        margin-right: 20px;    
+        font-size: 24px;
+        line-height: 1;
+        @media screen and (min-width: $pc) {
+            margin-right: 50px;    
+            font-size: 38px;
+            line-height: 1;
+        }
         svg {
             margin-left: 15px;
-            width: 46px;
+            width: 20px;
+            @media screen and (min-width: $pc) {
+                width: 46px;
+            }
         }
     }
     &__elem {
         display: block;
         background-color: #fff;
-        width: 375px;
-        height: 375px;
         border-radius: 50%;
         position: absolute;
         z-index: 1;
         right: -50%;
+        width: 275px;
+        height: 275px;
         transition: all 0.8s ease-in-out;
+        @media screen and (min-width: $pc) {
+            width: 375px;
+            height: 375px;
+        }
     }
 }
 
 .works {
-    padding: 104px 0;
-    padding-bottom: 180px;
-    @media screen and (max-width: $pc) {
-        padding: 64px 0;
-        padding-bottom: 120px;
+    padding: 64px 0;
+    padding-bottom: 120px;
+    @media screen and (min-width: $pc) {
+        padding: 104px 0;
+        padding-bottom: 180px;
     }
     .menu {
         width: fit-content;

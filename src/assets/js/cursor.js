@@ -94,6 +94,9 @@ if (screen.width  > 1064) {
   $('.main__link').on('mouseleave', () => {
     $('#cursor').removeClass('hide');
   });
+  $('.slider').on('mouseenter', () => {
+    $('#cursor').removeClass('white');
+  });
 
   // video
   $('.mockup__preview--img video').on('mouseenter', () => {
